@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid 19 India tracker</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <div class="container-fluid p-5 bg-light text-center my-3">
+        <h1>Covid-19 India Tracker</h1>
+        <h5 class="test-muted">
+            Open source project for tracking covid 19 cases in india
+        </h5>
+    </div>
+
+    <div class="container my-5">
+        <div class="row text-center">
+            <div class="col-3 text-warning">
+                <h5>Confirmed</h5>
+                <p id="confirmed"></p>
+            </div>
+        
+            <div class="col-3 text-info">
+                <h5>Active</h5>
+                <p id="active"></p>
+            </div>
+        
+        
+            <div class="col-3 text-success">
+                <h5>Recovered</h5>
+                <p id="recovered"></p>
+            </div>
+        
+        
+            <div class="col-3 text-danger">
+                <h5>Deceased</h5>
+                <p id="deaths"></p>
+            </div>
+        </div>
+        <canvas id="my-chart"></canvas>
+        <br><br><br><br>
+        <canvas id="my-chart2"></canvas>
+        <br><br><br><br>
+        <canvas id="my-chart3"></canvas>
+        <div class="container-fluid p-5 bg-light text-center my-3">
+            <h1 class="text-center">Select and De-select required options </h1>
+        </div>
+       
+    </div>
+
+
+    <div id="corona-map">
+        <div id='map'></div>
+    </div>
+
+    <div id="info">
+      
+      <div id="b1">
+        <i class="fa fa-map-marker" style="font-size:48px;color:rgb(0, 230, 115); text-align: center;display: block;
+        margin: 0 auto;"></i>
+        <button id="btn">Cases &#8826 250</button>
+      </div>
+      <div id="b2">
+        <i class="fa fa-map-marker" style="font-size:48px;color:rgb(102, 153, 255); text-align: center;display: block;
+        margin: 0 auto;"></i>
+        <button id="btn">250 &#8826 Cases &#8826 1000</button>
+      </div>
+      <div id="b3">
+        <i class="fa fa-map-marker" style="font-size:48px;color:rgb(255, 0, 0); text-align: center;display: block;
+        margin: 0 auto;"></i>
+        <button id="btn">1000 &#8826 Cases &#8826 3000</button>
+      </div>
+      <div id="b4">
+        <i class="fa fa-map-marker" style="font-size:48px;color:rgb(19, 7, 7); text-align: center;display: block;
+        margin: 0 auto;"></i>
+        <button id="btn"> Cases &#8827 3000</button>
+      </div>
+     
+
+    </div>
+   
+
+
+    
+</body>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYXJwaXQtZGhhbWlqYSIsImEiOiJja2E2bTBmZTkwODBuMnhwY2R4Y3ZpcnJyIn0.cqjm-jOHMrShaVxXLsCzlA';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v10',
+    zoom: 1,
+    Center:[0,40]
+  });
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="script.js"></script>
+<script src="mapdata.js"></script>
+</html>
