@@ -1,6 +1,6 @@
 function updateMap() {
 
-    fetch("/data1.json")
+    fetch("/data.json")
         .then(response => response.json())
         .then(rsp => {
             // console.log(rsp.data)
@@ -20,7 +20,7 @@ function updateMap() {
                 } else if (cases > 1000 && cases < 3000) {
                     color = "rgb(255, 0, 0)";
                 } else {
-                    color = `rgb(${cases},0,0)`;
+                    color = `rgb(${cases%10},${cases%100},${cases%1000})`;
                 }
 
                 // mark on the map
